@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -12,7 +13,10 @@ def index():
     
     # return '<p></p><p>Your browser is %s</p><p>method = %s</p><p>headers = %s</p> '% (user_agent,meth, header)
 
-    return '<h1>Bad Request</h1>',400
+    # return '<h1>Bad Request</h1>',400
+    response = make_response('<h1>This document carries a cookie!</h1>')
+    response.set_cookie('answer','42')
+    return response
 
 
 @app.route('/user/<name>')
