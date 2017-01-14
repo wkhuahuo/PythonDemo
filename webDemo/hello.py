@@ -6,11 +6,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     #return '<h1>Hello World!<h1>'
-    user_agent = request.headers.get('User-Agent')
-    meth = request.method
-    header = request.headers
+    # user_agent = request.headers.get('User-Agent')
+    # meth = request.method
+    # header = request.headers
     
-    return '<p></p><p>Your browser is %s</p><p>method = %s</p><p>headers = %s</p> '% (user_agent,meth, header)
+    # return '<p></p><p>Your browser is %s</p><p>method = %s</p><p>headers = %s</p> '% (user_agent,meth, header)
+
+    return '<h1>Bad Request</h1>',400
 
 
 @app.route('/user/<name>')
