@@ -9,7 +9,8 @@ def index():
     user_agent = request.headers.get('User-Agent')
     meth = request.method
     header = request.headers
-    return '<p>Your browser is %s</p><p>method = %s</p><p>headers = %s</p>' % (user_agent,meth, header)
+    
+    return '<p></p><p>Your browser is %s</p><p>method = %s</p><p>headers = %s</p> '% (user_agent,meth, header)
 
 
 @app.route('/user/<name>')
